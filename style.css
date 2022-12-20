@@ -43,6 +43,7 @@ body{
     margin:80px auto;
     transform-style:preserve-3d ;
     
+    
    
 }
 
@@ -77,18 +78,19 @@ body{
     /* background-color: rgb(159, 127, 255); */
     animation-fill-mode: forwards;
 }
-
+/* To have 10 rotations in order to get heads */
 .animate-heads {
     animation:flipheads 3s;
+    animation-fill-mode: forwards;
 
 }
 
 @keyframes flipheads {
-    form{
+    0%{
         transform: rotateY(0deg);
     }
 
-    to{
+    100%{
         transform: rotateY(1800deg);
     }
     
@@ -96,19 +98,27 @@ body{
 
 .animate-tails {
     animation:fliptails 3s;
+    animation-fill-mode: forwards;
+    /* To let coin make nine roatations so that tails can be displayed*/
     translate: rotateY(-180deg);
 
 }
-
+/* To have 9 rotations in order to get tails(we already done translate: rotateY(-180deg); to make 9 roatations) */
 @keyframes fliptails {
-    form{
+    0%{
         transform: rotateY(0deg);
     }
 
-    to{
-        transform: rotateY(1980deg);
+    100%{
+        transform: rotateY(1620deg);
     }
     
+}
+.result{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    color:black;
+
 }
 
 .button-container{
